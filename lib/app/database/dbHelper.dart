@@ -93,7 +93,6 @@ class DatabaseHelper {
     await db.execute('''
       CREATE TABLE parentlist (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        id_created INTEGER,
         title TEXT NOT NULL,
         namapria TEXT NOT NULL,
         namawanita TEXT NOT NULL,
@@ -102,7 +101,7 @@ class DatabaseHelper {
         resepsi TEXT NOT NULL,
         lokasi TEXT NOT NULL,
         tanggalResepsi TEXT,
-        FOREIGN KEY (id_created) REFERENCES users(usrId)
+        FOREIGN KEY (id) REFERENCES users(usrId)
       );
     ''');
   }

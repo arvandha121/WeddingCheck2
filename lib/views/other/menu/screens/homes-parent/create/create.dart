@@ -156,7 +156,7 @@ class _CreateParentState extends State<CreateParent> {
 
         await listparent.insertParentListItem(
           ParentListItem(
-            id_created: currentUserId, // Add this line
+            // id_created: currentUserId, // Add this line
             title: titleController.text,
             namapria: namapriaController.text,
             namawanita: namawanitaController.text,

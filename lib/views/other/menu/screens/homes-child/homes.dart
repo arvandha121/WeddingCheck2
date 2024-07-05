@@ -100,7 +100,13 @@ class _HomesChildState extends State<HomesChild> {
             onSelected: (String result) {
               switch (result) {
                 case 'import_excel':
-                  importFromExcel(context, widget.parentId, _loadItems);
+                  try {
+                    importFromExcel(context, widget.parentId, _loadItems);
+                  } catch (e) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Error importing from Excel: $e')),
+                    );
+                  }
                   break;
                 case 'export_excel':
                   exportListItemsToExcel(context, _items);
